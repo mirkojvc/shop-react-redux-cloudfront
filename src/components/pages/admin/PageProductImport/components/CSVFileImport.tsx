@@ -32,9 +32,9 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       url,
       params: {
         name: encodeURIComponent(file!.name),
-        headers: {
-          Authorization: "Basic " + localStorage.getItem("authorization_token"),
-        },
+      },
+      headers: {
+        Authorization: "Basic " + localStorage.getItem("authorization_token"),
       },
     });
     if (response.status === 401 || response.status === 403) {
